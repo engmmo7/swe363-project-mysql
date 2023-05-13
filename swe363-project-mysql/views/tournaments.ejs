@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./style.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>List of tournaments</title>
+    </head>
+    <body>
+        <section id="TOURNAMENTS">
+            <div class="TOURNAMENTS container">
+              <div class="TOURNAMENTS-top">
+                <h1 class="section-title"><span>L</span>ist <span>O</span>f <span>T</span>ourna<span>m</span>ts</h1>
+              </div>
+              <div class="TOURNAMENTS-bottom">
+				<% tournaments.forEach(function(tournament) { %>
+                <div class="TOURNAMENTS-item">
+                  <div class="icon"><a href="TOURNAMENTS-list.html"><img src="<%= tournament.imageUrl %>" /></a></div>
+                  <h2><%= tournament.type %></h2>
+                  <p>Stadium: <%= tournament.name %></p>
+                  <p>Time: <%= tournament.time %></p>
+                  <p>Day: <%= tournament.day %> </p>
+                  <p><span><%= tournament.price %> riyals</span> for the person</p>
+                  <br/>
+					  <div class="register-button">
+						        <a href="payment.html" >Register-Now</a>
+					  </div>
+					  <details>
+						<summary>Click here for more details...</summary>
+							<p><br/>The tournament is set to take place in Dammam starting from the next saturday <%= tournament.time %>. The tournament is open to
+							all local amateur <%= tournament.type %> teams and
+							is expected to draw in dozens of teams from
+							all over the country.
+							<br/><br/>
+							The tournament will be held at <%= tournament.name %>, which feature a high-quality <%= tournament.type %> field with. Teams will be guaranteed at least three games in the tournament,
+							and the cost to participate is <%= tournament.price %> riyal per person.
+							<br/><br/>
+							Local businesses and organizations have already signed on as sponsors for the tournament,
+							offering everything from free meals for players to discounts at local sporting goods stores. In addition,
+							there will be food trucks and vendors on-site selling a variety of snacks and refreshments for spectators.</p>
+					  </details>
+				</div>
+				<% }); %>
+              </div>
+            </div>
+          </section>
+    </body>
+</html>

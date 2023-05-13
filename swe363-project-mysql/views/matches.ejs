@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>List of Matches</title>
+  </head>
+  <body>
+    <section id="matches">
+      <div class="matches container">
+        <div class="matches-top">
+          <h1 class="section-title"><span>L</span>ist <span>O</span>f <span>M</span>atc<span>h</span>es</h1>
+        </div>
+        <div class="matches-bottom">
+          <% matches.forEach(function(match) { %>
+            <div class="matches-item">
+              <div class="icon"><a href="academics-list.html"><img src="<%= match.imageUrl %>" /></a></div>
+              <h2>Date: <%= match.match_date %></h2>
+              <ol class="matches_list">
+                <li><%= match.tournament_name %>: <%= match.team1_name %> vs <%= match.team2_name %> - <%= match.match_time %></li>              
+              </ol>
+              <br>
+              <div class="viewResult-button">
+                <a href="#">View result</a>
+              </div>
+            </div>
+          <% }); %>
+        </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
+

@@ -1,0 +1,38 @@
+<!DOCTYPE html> 
+<html> 
+    <head> 
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./style.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>List of Stadiums</title> 
+    </head> 
+    <body> 
+        <section id="stadiums">
+            <div class="stadiums container">
+              <div class="stadiums-header">
+                <h1 class="section-title"><span>STADIUM</span></h1>
+              </div>
+              <div class="all-stadiums">
+                <% stadiums.forEach(function(stadium) { %>
+                <div class="stadiums-item">
+                  <div class="stadiums-info">
+                    <h1><%= stadium.name %></h1>
+                    <h2> Football, Handball, Basketball, Volleyball</h2>
+                  </div>
+                  <div class="stadiums-img">
+                    <img src="<%= stadium.imageUrl %>">
+                  </div>
+                </div>
+                <% }); %>
+              </div>
+              <div class="stadiums-footer">
+                <div class="stadiums-button">
+                  <a href="add-stadiums" type="button" class="cta" onclick="popupTogglestadiumst();">Add stadiums</a>
+                </div>
+              </div>
+            </div>
+          </section>
+
+    </body> 
+</html>

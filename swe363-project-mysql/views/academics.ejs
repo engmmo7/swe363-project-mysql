@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./style.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>List of Academies</title>
+    </head>
+    <body>
+      <!-- ACADEMIES Section -->
+      <section id="ACADEMIES">
+      <div class="ACADEMIES-container">
+        <div class="ACADEMIES-top">
+          <h1 class="section-title"><span>L</span>ist <span>O</span>f <span>A</span>cade<span>m</span>ies</h1>
+        </div>
+        <div class="ACADEMIES-bottom">
+          <% academics.forEach(function(academy) { %>
+          <div class="ACADEMIES-item">
+            <div class="icon"><a href="acadimics-list.html"><img src="<%= academy.imageUrl %>" alt="<%= academy.type %>" /></a></div>
+            <h2><%= academy.type %></h2>
+            <p>start from <span><%= academy.price %> riyals/ month</span></p>
+          </div>
+          <% }); %>
+        </div>
+      </div>
+    </section>
+      <!-- End ACADEMIES Section -->
+
+    </body>
+</html>

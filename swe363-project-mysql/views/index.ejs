@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Dammamsportcentre</title>
+</head>
+
+<body>
+  <!-- Header -->
+  <section id="header">
+    <div class="header container">
+      <div class="nav-bar">
+        <div class="brand">
+          <a href="#hero">
+            <h1><span>D</span>ammam <span>S</span>port <span>C</span>entre</h1>
+          </a>
+        </div>
+        <div class="nav-list">
+          <div class="hamburger">
+            <div class="bar"></div>
+          </div>
+          <ul>
+            <li><a href="#hero" data-after="Home">Home</a></li>
+            <li><a href="academics" data-after="Academies">Academies</a></li>
+            <li><a href="stadiums" data-after="stadiums">stadiums</a></li>
+            <li><a href="matches" data-after="matches">matches</a></li>
+            <li><a href="tournaments" data-after="tournaments ">tournaments</a></li>
+            <li><a href="#about" data-after="About">About</a></li>
+            <li><a href="#contact" data-after="Contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Header -->
+
+
+  <!-- Hero Section  -->
+  <section id="hero">
+    <div class="hero container">
+      <div>
+        <h1>Hello,</h1>
+        <h1>Reserving stadiums just got faster and easier</h1>
+        <h1>With Dammam Sport Centre</h1>
+        <a href="login-user" type="button" class="cta">sign up</a>
+      </div>
+    </div>
+  </section>
+  <!-- End Hero Section  -->
+
+  <!-- ACADEMIES Section -->
+  <section id="ACADEMIES">
+    <div class="ACADEMIES-container">
+      <div class="ACADEMIES-top">
+        <h1 class="section-title"><span>L</span>ist <span>O</span>f <span>A</span>cade<span>m</span>ies</h1>
+      </div>
+      <div class="ACADEMIES-bottom">
+        <% academics.forEach(function(academy) { %>
+        <div class="ACADEMIES-item">
+          <div class="icon"><img src="<%= academy.imageUrl %>" alt="<%= academy.type %>" /></a></div>
+          <h2><%= academy.type %></h2>
+          <p>start from <span><%= academy.price %> riyals/ month</span></p>
+        </div>
+        <% }); %>
+      </div>
+    </div>
+  </section>
+  <!-- End ACADEMIES Section -->
+
+  <!-- stadiums Section -->
+  <section id="stadiums">
+    <div class="stadiums container">
+      <div class="stadiums-header">
+        <h1 class="section-title"><span>STADIUM</span></h1>
+      </div>
+      <div class="all-stadiums">
+        <% stadiums.forEach(function(stadium) { %>
+          <div class="stadiums-item">
+            <div class="stadiums-info">
+              <h1><%= stadium.name %></h1>
+              <h2> Football, Handball, Basketball, Volleyball</h2>
+            </div>
+            <div class="stadiums-img">
+              <img src="<%= stadium.imageUrl %>">
+            </div>
+          </div>
+          <% }); %>
+      </div>
+      <div class="stadiums-footer">
+        <div class="stadiums-button">
+          <a href="add-stadiums" type="button" class="cta" onclick="popupTogglestadiumst();">Add stadiums</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End stadiums Section -->
+
+<!-- matches Section -->
+<section id="matches">
+  <div class="matches container">
+    <div class="matches-top">
+      <h1 class="section-title"><span>L</span>ist <span>O</span>f <span>M</span>atc<span>h</span>es</h1>
+    </div>
+    <div class="matches-bottom">
+      <% matches.forEach(function(match) { %>
+        <div class="matches-item">
+          <div class="icon"><a href="academics-list.html"><img src="<%= match.imageUrl %>" /></a></div>
+          <h2>Date: <%= match.match_date %></h2>
+          <ol class="matches_list">
+            <li><%= match.tournament_name %>: <%= match.team1_name %> vs <%= match.team2_name %> - <%= match.match_time %></li>              
+          </ol>
+          <br>
+          <div class="viewResult-button">
+            <a href="#">View result</a>
+          </div>
+        </div>
+      <% }); %>
+    </div>
+  </div>
+</section>
+<!-- End matches Section -->
+
+  <!-- TOURNAMENTS Section -->
+  <section id="TOURNAMENTS">
+    <div class="TOURNAMENTS container">
+      <div class="TOURNAMENTS-top">
+        <h1 class="section-title"><span>L</span>ist <span>O</span>f <span>T</span>ourna<span>m</span>ts</h1>
+      </div>
+      <div class="TOURNAMENTS-bottom">
+				<% tournaments.forEach(function(tournament) { %>
+          <div class="TOURNAMENTS-item">
+            <div class="icon"><img src="<%= tournament.imageUrl %>" /></a></div>
+            <h2><%= tournament.type %></h2>
+            <p>Stadium: <%= tournament.name %></p>
+            <p>Time: <%= tournament.time %></p>
+            <p>Day: <%= tournament.day %> </p>
+            <p><span><%= tournament.price %> riyals</span> for the person</p>
+            <br/>
+      <div class="register-button">
+              <a href="payment" >Register-Now</a>
+      </div>
+      <details>
+      <summary>Click here for more details...</summary>
+        <p><br/>The tournament is set to take place in Dammam starting from the next saturday <%= tournament.time %>. The tournament is open to
+        all local amateur <%= tournament.type %> teams and
+        is expected to draw in dozens of teams from
+        all over the country.
+        <br/><br/>
+        The tournament will be held at <%= tournament.name %>, which feature a high-quality <%= tournament.type %> field with. Teams will be guaranteed at least three games in the tournament,
+        and the cost to participate is <%= tournament.price %> riyal per person.
+        <br/><br/>
+        Local businesses and organizations have already signed on as sponsors for the tournament,
+        offering everything from free meals for players to discounts at local sporting goods stores. In addition,
+        there will be food trucks and vendors on-site selling a variety of snacks and refreshments for spectators.</p>
+      </details>
+  </div>
+  <% }); %>
+      </div>
+    </div>
+  </section>
+  <!-- End TOURNAMENTS Section -->
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="about container">
+      <div class="col-left">
+        <div class="about-img">
+          <img src="./img/dammamlogo.png">
+        </div>
+      </div>
+      <div class="col-right">
+        <h1 class="section-title">About <span>US</span></h1>
+        <h2> Dammam Sport Centre</h2>
+        <p>provides some special offers to members by helping them to choose the best sporting venues to get the best experience, fastest time, and safety.</p>
+        <a href="login-admin" class="cta">be part of our members</a>
+      </div>
+    </div>
+  </section>
+  <!-- End About Section -->
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="contact container">
+      <div>
+        <h1 class="section-title">Contact <span>info</span></h1>
+      </div>
+      <div class="contact-items">
+        <div class="contact-item">
+          <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/phone.png" /></div>
+          <div class="contact-info">
+            <h1>Service Phone</h1>
+            <h2>+996 56 365  4874</h2>
+            <h2>+996 54 341  1775</h2>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/new-post.png" /></div>
+          <div class="contact-info">
+            <h1>Email</h1>
+            <h2>Dammamsportcentre@gmail.com</h2>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/map-marker.png" /></div>
+          <div class="contact-info">
+            <h1>Address</h1>
+            <h2>Saudi Arabia , Eastern Province , Dammam </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Contact Section -->
+
+  <!-- Footer -->
+  <section id="footer">
+    <div class="footer container">
+      <div class="brand">
+        <h1><span>D</span>ammam <span>S</span>port <span>C</span>entre</h1>
+      </div>
+      <h2>Your Complete Web Solution</h2>
+      <div class="social-icon">
+        <div class="social-item">
+          <a href="#"><img src="https://img.icons8.com/bubbles/100/000000/facebook-new.png" /></a>
+        </div>
+        <div class="social-item">
+          <a href="#"><img src="https://img.icons8.com/bubbles/100/000000/instagram-new.png" /></a>
+        </div>
+        <div class="social-item">
+          <a href="#"><img src="https://cdn4.iconfinder.com/data/icons/social-media-icons-the-circle-set/48/twitter_circle-512.png" /></a>
+        </div>
+        <div class="social-item">
+          <a href="#"><img src="https://img.icons8.com/bubbles/100/000000/behance.png" /></a>
+        </div>
+      </div>
+      <p>Copyright © 2023 Dammam sport centre. All rights reserved</p>
+    </div>
+  </section>
+  <!-- End Footer -->
+  <script src="/app.js"></script>
+</body>
+
+</html>
