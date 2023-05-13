@@ -29,6 +29,7 @@ Because of the shortage of time, miscommunication and missed member, we could no
 1- The first part (using mysql) done by Mohammad owaidah:
 The part that was Implemented by mysql was focusing on getting the pages fetching the data from the database and ejs was used.
 -The Github link: https://github.com/engmmo7/swe363-project-mysql.git
+
 2- The first part (using mongodb) done by Mujtaba Raban:
 The part that was Implemented by mongodb was focusing on the registration and login and have the profile page.
 -The Github link: https://github.com/professorkataa/swe363-project-full.git
@@ -43,4 +44,5 @@ npm install method-override
 npm install express
 npm install mongodb
 npm install git
+
 
